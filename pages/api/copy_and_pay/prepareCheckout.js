@@ -11,30 +11,30 @@ export default async function prepareCheckout(environment, bearerToken, entityID
     // const [checkoutID_UserInput, setCheckoutID_UserInput] = useState(null)
 
     // SET BEARER TOKEN
-    const bearerToken_Options = {
-      method: "POST",
-      headers: {
-        Authorization:
-          "Bearer " + bearerToken,
-      },
-    };
+    // const bearerToken_Options = {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization:
+    //       "Bearer " + bearerToken,
+    //   },
+    // };
     
     // SET PAYMENT DATA
-    const response = await fetch(
-      `https://eu-test.oppwa.com/v1/checkouts?
-        entityId=${entityId}&
-        amount=${amount}&
-        currency=${currency}&
-        paymentType=${paymentType}&
-        merchantTransactionId=${merchantTransactionID}`,
-        bearerToken_Options
-    );
+   // const response = await fetch(
+    //   `https://eu-test.oppwa.com/v1/checkouts?
+    //     entityId=${entityId}&
+    //     amount=${amount}&
+    //     currency=${currency}&
+    //     paymentType=${paymentType}&
+    //     merchantTransactionId=${merchantTransactionID}`,
+    //     bearerToken_Options
+    // );
     
     // WAIT FOR NDC
-    const responseData = await response.json();
-    console.log(responseData);
+    // const responseData = await response.json();
+    // console.log(responseData);
     
     // RETURN CHECKOUT ID URL
     // return(`https://${environment}.oppwa.com/v1/paymentWidgets.js?checkoutId=${responseData.ndc}`);
-    return(`https://eu-test.oppwa.com/v1/paymentWidgets.js?checkoutId=${responseData.ndc}`);
+   // return(`https://eu-test.oppwa.com/v1/paymentWidgets.js?checkoutId=${responseData.ndc}`);
   };
